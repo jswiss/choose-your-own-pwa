@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { set, get } from 'idb-keyval';
 
 import './index.css';
-import App from './App';
+import { App } from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
