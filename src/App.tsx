@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { set, get } from 'idb-keyval';
 
 import { usePersistedState } from './use-persisted-state';
+import { Choices } from './choices';
+import { TextDisplay } from './text-display';
 import './App.css';
 
 const sharedStyles = {
@@ -31,9 +33,9 @@ export function App() {
 	return (
 		<div style={styles}>
 			{darkModeOn === undefined ? (
-				<>Loading preferences...</>
+				<React.Fragment>Loading preferences...</React.Fragment>
 			) : (
-				<>
+				<React.Fragment>
 					<input
 						type="checkbox"
 						value="darkMode"
@@ -44,7 +46,14 @@ export function App() {
 						onChange={handleOnChange}
 					/>
 					<label htmlFor="darkModeOn">Use dark mode?</label>
-				</>
+					<TextDisplay narrative="testing 1 2 3" />
+					<Choices
+						choiceOneText="Continue with your holiday"
+						choiceOneData={1}
+						choiceTwoText="Stay in the UK"
+						choiceTwoData={2}
+					/>
+				</React.Fragment>
 			)}
 		</div>
 	);
